@@ -60,12 +60,7 @@
     ]
   },
   {
-    "question": "Have you ever discussed someone's prostate on ham radio?",
-    "subquestions": [
-      {
-        "question": "someone else's (regardless of whether you're so equipped)?"
-      }
-    ]
+    "question": "Have you ever discussed a prostate on ham radio?"
   },
   {
     "question": "Have you ever heard a QSO on ham radio that would pass the Bechdel Test?",
