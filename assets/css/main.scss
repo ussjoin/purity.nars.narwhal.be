@@ -91,6 +91,14 @@ li {
   margin: 0.4rem 0; 
 }
 
+ol {
+  list-style-position: outside;
+}
+
+ul {
+  list-style-type: none;
+}
+
 input[type=checkbox] {
     margin-right:10px;
 }
