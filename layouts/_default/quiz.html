@@ -16,18 +16,21 @@
     {{ end }}
 
     <form>
-      <ol>
-        {{ range $data }}
-          <li><input type="checkbox">{{ .question }}</input></li>
-          {{ if .subquestions }}
-            <ol>
-              {{ range .subquestions }}
-                <li><input type="checkbox">... {{ .question }}</input></li>
+      {{ range $data }}
+        <h2>{{ .category }}</h2>
+          <ol>
+            {{ range .questions }}
+              <li><input type="checkbox">{{ .question }}</input></li>
+              {{ if .subquestions }}
+                <ol>
+                  {{ range .subquestions }}
+                    <li><input type="checkbox">... {{ .question }}</input></li>
+                  {{ end }}
+                </ol>
               {{ end }}
-            </ol>
-          {{ end }}
+            {{ end }}
+          </ol>
         {{ end }}
-      </ol>
     </form>
 </article>
 {{ end }}

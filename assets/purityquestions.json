@@ -1,180 +1,205 @@
 [
   {
-    "question": "Have you sent an SSTV transmission?"
-  },
-  {
-    "question": "Have you made an SSTV QSO?",
-    "subquestions": [
+    "category": "On the Air",
+    "questions": [
       {
-        "question": "where you received what looks like a 1990s dorm room poster (complete with ample flesh) via SSTV?"
+        "question": "Have you sent an SSTV transmission?"
       },
       {
-        "question": "with someone who doesn't understand why they shouldn't be sending 1990s dorm room posters via ham radio?"
+        "question": "Have you made an SSTV QSO?",
+        "subquestions": [
+          {
+            "question": "where you received what looks like a 1990s dorm room poster (complete with ample flesh) via SSTV?"
+          },
+          {
+            "question": "with someone who doesn't understand why they shouldn't be sending 1990s dorm room posters via ham radio?"
+          }
+        ]
       }
     ]
   },
   {
-    "question": "Have you put up an antenna?",
-    "subquestions": [
+    "category": "Setup",
+    "questions": [
       {
-        "question": "in the rain?"
+        "question": "Have you put up an antenna?",
+        "subquestions": [
+          {
+            "question": "in the rain?"
+          },
+          {
+            "question": "in a thunderstorm?"
+          },
+          {
+            "question": "not 'technically' in a thunderstorm?"
+          },
+          {
+            "question": "by throwing a heavy object that you didn't properly attach to the line?"
+          },
+          {
+            "question": "and then had to take it back down again to attach the coax because you forgot before you put it up?"
+          },
+          {
+            "question": "that fell down and broke itself?"
+          },
+          {
+            "question": "that fell down and broke something else?"
+          }
+        ]
       },
       {
-        "question": "in a thunderstorm?"
-      },
-      {
-        "question": "not 'technically' in a thunderstorm?"
-      },
-      {
-        "question": "by throwing a heavy object that you didn't properly attach to the line?"
-      },
-      {
-        "question": "and then had to take it back down again to attach the coax because you forgot before you put it up?"
-      },
-      {
-        "question": "that fell down and broke itself?"
-      },
-      {
-        "question": "that fell down and broke something else?"
+        "question": "Have you attached ham radio gear to something other than a purpose-built ham radio support?",
+        "subquestions": [
+          {
+            "question": "to a balloon?"
+          },
+          {
+            "question": "to a rocket?"
+          },
+          {
+            "question": "to a kite?"
+          },
+          {
+            "question": "to another human?"
+          },
+          {
+            "question": "to a pet?"
+          },
+          {
+            "question": "to an endangered species (flora or fauna)?"
+          },
+          {
+            "question": "in a protected area (state/national park)?"
+          },
+          {
+            "question": "to a plane?"
+          },
+          {
+            "question": "to a boat?"
+          },
+          {
+            "question": "to a house?"
+          },
+          {
+            "question": "to a car?"
+          },
+          {
+            "question": "to a bike?"
+          },
+          {
+            "question": "to a place of business you worked for?"
+          },
+          {
+            "question": "to a place of business you did not work for?"
+          },
+          {
+            "question": "to a place of worship?"
+          }
+        ]
       }
     ]
   },
   {
-    "question": "Have you ever attempted to do ham radio from inside a granite (or other mountain) bowl?"
-  },
-  {
-    "question": "Have you ever torn an antenna in half during an activation?"
-  },
-  {
-    "question": "Have you driven more than 10 miles to buy ham radio gear?",
-    "subquestions": [
+    "category": "Operating Events",
+    "questions": [
       {
-        "question": "50 miles?"
+        "question": "Have you ever attempted to do ham radio from inside a granite (or other mountain) bowl?"
       },
       {
-        "question": "100 miles?"
+        "question": "Have you ever torn an antenna in half during an activation?"
       },
       {
-        "question": "200 miles?"
+        "question": "Have you neglected personal care while DXing for multiple hours?",
+        "subquestions": [
+          {
+            "question": "where the number of hours exceeded the number of contacts you made?"
+          },
+          {
+            "question": "using a voice mode?"
+          }
+        ]
       }
     ]
   },
   {
-    "question": "Have you ever discussed a prostate on ham radio?"
-  },
-  {
-    "question": "Have you ever heard a QSO on ham radio that would pass the Bechdel Test?",
-    "subquestions": [
+    "category": "Other Hams",
+    "questions": [
       {
-        "question": "on HF?"
+        "question": "Have you ever discussed a prostate on ham radio?"
+      },
+      {
+        "question": "Have you ever heard a QSO on ham radio that would pass the Bechdel Test?",
+        "subquestions": [
+          {
+            "question": "on HF?"
+          }
+        ]
+      },
+      {
+        "question": "Have you ever used ham radio to discuss dialysis?",
+        "subquestions": [
+          {
+            "question": "on 2m?"
+          },
+          {
+            "question": "on 10m?"
+          },
+          {
+            "question": "on 20m or lower?"
+          }
+        ]
       }
     ]
   },
   {
-    "question": "Have you ever used ham radio to discuss dialysis?",
-    "subquestions": [
+    "category": "Potpourri",
+    "questions": [
       {
-        "question": "on 2m?"
+        "question": "Have you seen a vacuum tube?",
+        "subquestions": [
+          {
+            "question": "in person?"
+          }
+        ]
       },
       {
-        "question": "on 10m?"
+        "question": "Have you tuned a vacuum tube transmitter?"
       },
       {
-        "question": "on 20m or lower?"
+        "question": "Do you own radio gear that weighs more than you do?"
+      },
+      {
+        "question": "Have you ever fat-fingered a frequency so badly you ended up in Part 90?"
+      },
+      {
+        "question": "Have you driven more than 10 miles to buy ham radio gear?",
+        "subquestions": [
+          {
+            "question": "50 miles?"
+          },
+          {
+            "question": "100 miles?"
+          },
+          {
+            "question": "200 miles?"
+          }
+        ]
+      },
+      {
+        "question": "Have you ever been inspired to add an antenna to your house while working on an unrelated household chore?",
+        "subquestions": [
+          {
+            "question": "Did you complete the chore first?"
+          },
+          {
+            "question": "Did you ever complete the chore?"
+          }
+        ]
+      },
+      {
+        "question": "Can you remember the difference between a heterodyne and superheterodyne receiver?",
+        "points": -5
       }
     ]
-  },
-  {
-    "question": "Have you attached ham radio gear to something other than a purpose-built ham radio support?",
-    "subquestions": [
-      {
-        "question": "to a balloon?"
-      },
-      {
-        "question": "to a rocket?"
-      },
-      {
-        "question": "to a kite?"
-      },
-      {
-        "question": "to another human?"
-      },
-      {
-        "question": "to a pet?"
-      },
-      {
-        "question": "to an endangered species (flora or fauna)?"
-      },
-      {
-        "question": "in a protected area (state/national park)?"
-      },
-      {
-        "question": "to a plane?"
-      },
-      {
-        "question": "to a boat?"
-      },
-      {
-        "question": "to a house?"
-      },
-      {
-        "question": "to a car?"
-      },
-      {
-        "question": "to a bike?"
-      },
-      {
-        "question": "to a place of business you worked for?"
-      },
-      {
-        "question": "to a place of business you did not work for?"
-      },
-      {
-        "question": "to a place of worship?"
-      }
-    ]
-  },
-  {
-    "question": "Have you seen a vacuum tube?",
-    "subquestions": [
-      {
-        "question": "in person?"
-      }
-    ]
-  },
-  {
-    "question": "Have you tuned a vacuum tube transmitter?"
-  },
-  {
-    "question": "Do you own radio gear that weighs more than you do?"
-  },
-  {
-    "question": "Have you ever fat-fingered a frequency so badly you ended up in Part 90?"
-  },
-  {
-    "question": "Have you neglected personal care while DXing for multiple hours?",
-    "subquestions": [
-      {
-        "question": "where the number of hours exceeded the number of contacts you made?"
-      },
-      {
-        "question": "using a voice mode?"
-      }
-    ]
-  },
-  {
-    "question": "Have you ever been inspired to add an antenna to your house while working on an unrelated household chore?",
-    "subquestions": [
-      {
-        "question": "Did you complete the chore first?"
-      },
-      {
-        "question": "Did you ever complete the chore?"
-      }
-    ]
-  },
-  {
-    "question": "Can you remember the difference between a heterodyne and superheterodyne receiver?",
-    "points": -5
   }
 ]
