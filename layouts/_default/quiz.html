@@ -20,11 +20,11 @@
         <h2>{{ .category }}</h2>
           <ol>
             {{ range .questions }}
-              <li><input type="checkbox">{{ .question }}</input></li>
+              <li><input type="checkbox">{{ .question | markdownify }}</input></li>
               {{ if .subquestions }}
                 <ol>
                   {{ range .subquestions }}
-                    <li><input type="checkbox">... {{ .question }}</input></li>
+                    <li><input type="checkbox">... {{ .question | markdownify }}</input></li>
                   {{ end }}
                 </ol>
               {{ end }}

@@ -31,7 +31,7 @@
             "question": "in a thunderstorm?"
           },
           {
-            "question": "not 'technically' in a thunderstorm?"
+            "question": "not _technically_ in a thunderstorm?"
           },
           {
             "question": "by throwing a heavy object that you didn't properly attach to the line?"
@@ -169,10 +169,10 @@
         "question": "Do you own radio gear that weighs more than you do?"
       },
       {
-        "question": "Have you ever fat-fingered a frequency so badly you ended up in Part 90?"
+        "question": "Have you ever fat-fingered a frequency so badly you ended up in [Part 90](https://en.wikipedia.org/wiki/Business_band)?"
       },
       {
-        "question": "Have you driven more than 10 miles to buy ham radio gear?",
+        "question": "Have you transported yourself more than 10 miles to buy ham radio gear?",
         "subquestions": [
           {
             "question": "50 miles?"
