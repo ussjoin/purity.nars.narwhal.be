@@ -20,11 +20,11 @@
         {{ range $data }}
           <li><input type="checkbox">{{ .question }}</input></li>
           {{ if .subquestions }}
-            <ul>
+            <ol>
               {{ range .subquestions }}
                 <li><input type="checkbox">... {{ .question }}</input></li>
               {{ end }}
-            </ul>
+            </ol>
           {{ end }}
         {{ end }}
       </ol>

@@ -89,10 +89,17 @@ p { margin: 1rem 0; }
 
 li { 
   margin: 0.4rem 0; 
+  list-style-type: none;
+}
+
+li:before {
+  counter-increment: subitem;
+  content: counters(subitem, ".") ". ";
 }
 
 ol {
   list-style-position: outside;
+  counter-reset: subitem;
 }
 
 ul {
