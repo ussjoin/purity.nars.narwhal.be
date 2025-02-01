@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ partial "back_link.html" .}}
+
+<article>
+
+    <h1>{{ .Title }}</h1>
+
+    {{ $data := dict }}
+    {{ $path := "purityquestions.json" }}
+    {{ with resources.Get $path }}
+      {{ with . | transform.Unmarshal }}
+        {{ $data = . }}
+      {{ end }}
+    {{ else }}
+      {{ errorf "Unable to get global resource %q" $path }}
+    {{ end }}
+
+    <form>
+      <ul>
+        {{ range $data }}
+          <li><input type="checkbox">{{ .question }}</input></li>
+          {{ if .subquestions }}
+            <ul>
+              {{ range .subquestions }}
+                <li><input type="checkbox">... {{ .question }}</input></li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </form>
+</article>
+{{ end }}
