@@ -63,7 +63,7 @@
     "question": "Have you ever discussed someone's prostate on ham radio?",
     "subquestions": [
       {
-        "question": "someone else's (if you're so equipped)?"
+        "question": "someone else's (regardless of whether you're so equipped)?"
       }
     ]
   },
@@ -180,5 +180,9 @@
         "question": "Did you ever complete the chore?"
       }
     ]
+  },
+  {
+    "question": "Can you remember the difference between a heterodyne and superheterodyne receiver?",
+    "points": -5
   }
 ]
