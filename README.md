@@ -11,5 +11,4 @@ On behalf of the Narwhal Amateur Radio Society's Slack crew,
 - [ ] A tiny note at the top of the page that explains that if your JS is disabled, you are missing no content, but won't be able to get a score or a certificate because those are done in JS. (Disappear it with JS of course)
 - [ ] Points scoring (including custom points on a per-question basis)
 - [ ] Take testtaker's callsign/name down (to use on certificate)
-- [ ] Render Markdown in the questions (so they can contain links, _emphasis_, etc)
 - [ ] PDF generation (for certificates) using [jsPDF](https://github.com/parallax/jsPDF)
