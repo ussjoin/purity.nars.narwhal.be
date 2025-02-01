@@ -132,9 +132,6 @@
         "question": "to a place of business you worked for?"
       },
       {
-        "question": "to a place of business you worked for?"
-      },
-      {
         "question": "to a place of business you did not work for?"
       },
       {
@@ -143,7 +140,7 @@
     ]
   },
   {
-    "question": "Have you seen a vacuum tube??",
+    "question": "Have you seen a vacuum tube?",
     "subquestions": [
       {
         "question": "in person?"
