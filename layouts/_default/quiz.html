@@ -16,7 +16,7 @@
     {{ end }}
 
     <form>
-      <ul>
+      <ol>
         {{ range $data }}
           <li><input type="checkbox">{{ .question }}</input></li>
           {{ if .subquestions }}
@@ -27,7 +27,7 @@
             </ul>
           {{ end }}
         {{ end }}
-      </ul>
+      </ol>
     </form>
 </article>
 {{ end }}

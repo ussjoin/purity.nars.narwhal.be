@@ -4,7 +4,7 @@ Very much a draft; not to be taken as a finished product. How did you find this?
 
 On behalf of the Narwhal Amateur Radio Society's Slack crew,
 
-I am K3QB. 73.
+`de K3QB. 73`
 
 ## TODO
 
@@ -13,4 +13,4 @@ I am K3QB. 73.
 - [ ] Points scoring (including custom points on a per-question basis)
 - [ ] Take testtaker's callsign/name down (to use on certificate)
 - [ ] Render Markdown in the questions (so they can contain links, _emphasis_, etc)
-- [ ] PDF generation (for certificates)
+- [ ] PDF generation (for certificates) using [jsPDF](https://github.com/parallax/jsPDF)
