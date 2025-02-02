@@ -1,7 +1,25 @@
 {{ define "main" }}
 {{ partial "back_link.html" .}}
 
+<script type="text/javascript">
+  function calculateScore() {
+    var score = 0;
+    const inputs = document.getElementsByTagName("input");
+    for (const input of inputs) {
+      if (input.getAttribute('type')=='checkbox') {
+        if (input.checked) {
+          score += parseInt(input.value);
+        }
+      }
+    }
+    const scorebox = document.getElementById('score');
+    scorebox.innerText = score;
+  }
+</script>
+
 <article>
+
+    <h1>Score: <span id="score">0</span></h1>
 
     <h1>{{ .Title }}</h1>
 
@@ -15,22 +33,30 @@
       {{ errorf "Unable to get global resource %q" $path }}
     {{ end }}
 
-    <form>
+    <form action="none">
       {{ range $data }}
         <h2>{{ .category }}</h2>
           <ol>
             {{ range .questions }}
-              <li><input type="checkbox">{{ .question | markdownify }}</input></li>
+              <li><input type="checkbox" oninput="calculateScore()" value="{{ default 1 .points }}" />{{ .question | markdownify }}</li>
               {{ if .subquestions }}
                 <ol>
                   {{ range .subquestions }}
-                    <li><input type="checkbox">... {{ .question | markdownify }}</input></li>
+                    <li><input type="checkbox" oninput="calculateScore()" value="{{ default 1 .points }}" />... {{ .question | markdownify }}</li>
                   {{ end }}
                 </ol>
               {{ end }}
             {{ end }}
           </ol>
         {{ end }}
+        <br />
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" />
+        <br />
+        <label for="callsign">Your Callsign:</label>
+        <input type="text" name="callsign" id="callsign" />
+        <br />
+        <input type="submit" value="Generate Certificate" />
     </form>
 </article>
 {{ end }}
