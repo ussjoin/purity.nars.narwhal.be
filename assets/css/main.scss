@@ -115,6 +115,32 @@ input[type=checkbox] {
     margin-right:10px;
 }
 
+#generate_certificate_inputs {
+  visibility: hidden;
+}
+
+#scoreblock {
+  visibility: hidden;
+  position: absolute;
+}
+
+#scoreblock-inner {
+  position: fixed;
+  right: 3em;
+  bottom: 3em;
+  background-color: white;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin: 0.1em;
+  border-radius: 1em;
+}
+
+#nojs {
+  
+}
+
 a {
   text-decoration: none;
   &:hover { text-decoration: underline; }
