@@ -64,10 +64,12 @@ body[a="light"] { @include light-appearance; }
 
 @media (prefers-color-scheme: dark) {
   body[a="auto"] { @include dark-appearance; }
+  #scoreblock-inner { background-color: #000000; }
 }
 
 @media (prefers-color-scheme: light) {
   body[a="auto"] { @include light-appearance; }
+  #scoreblock-inner { background-color: #ffffff; }
 }
 
 // -------------------------------------------- //
@@ -128,7 +130,6 @@ input[type=checkbox] {
   position: fixed;
   right: 3em;
   bottom: 3em;
-  background-color: white;
   padding-top: 0px;
   padding-bottom: 0px;
   padding-left: 0.5em;
