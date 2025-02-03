@@ -2,3 +2,4 @@ baseURL = 'https://purity.nars.narwhal.be'
 languageCode = 'en-us'
 title = 'NARS - Ham Radio Purity Test'
 theme = 'nostyleplease'
+enableGitInfo = true

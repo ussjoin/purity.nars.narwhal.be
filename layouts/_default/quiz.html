@@ -58,6 +58,10 @@
     Hello! It looks like you're not using JavaScript. That's totally great! The entire quiz is statically generated with <a href="https://gohugo.io/">Hugo</a> and our entire page source is available <a href="https://github.com/ussjoin/purity.nars.narwhal.be">on GitHub</a>. Unfortunately, it means we can't calculate your score or generate your certificate, because we do all that client-side for maximum privacy (instead of in a Perl script like in the good old days). If you have an idea for how to improve our NoJS experience, please <a href="mailto:nars@narwhal.be">contact us</a>!
   </div>
   <div id="totalpoints" style="visibility:hidden">{{ $totalpoints }}</div>
+  {{ with .GitInfo }}
+    <div id="githash" style="visibility:hidden">{{.CommitDate.Format "2006-01-02" }} {{ .AbbreviatedHash }}</div>
+  {{ end }}
+  
 </article>
 
 <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -99,7 +103,6 @@
     
     const totalPointsBox = document.getElementById('totalpoints');
     const totalPoints = parseInt(totalPointsBox.textContent);
-    console.log(totalpoints);
     
     const percentage = Math.round(100*(parseFloat(theScore) / parseFloat(totalPoints)))
     
@@ -112,10 +115,15 @@
     doc.text(month + " " + date.getDate() + ", " + date.getFullYear(), 5.5, 6.75, {align: 'center'});
     
     //doc.text("Hello world!", 1, 1);
-    console.log("Got here");
     //console.log(doc);
     //doc.output('pdfobjectnewwindow', {filename:"NARS Purity Certificate.pdf"})
-    doc.save("certificate.pdf");
+    
+    const githash = document.getElementById('githash');
+    const githashvalue = githash.textContent;
+    doc.setFontSize(6);
+    doc.text(githashvalue, 0.25, 8.25, {align: 'left'});
+    
+    doc.save("NARS Purity Certificate.pdf");
   }
   
   function loadScoring() {

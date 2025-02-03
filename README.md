@@ -8,4 +8,5 @@ On behalf of the Narwhal Amateur Radio Society's Slack crew,
 
 ## TODO
 
-- [ ] Embed the build date / git ref into the built site so it can be included on certs
+- Add more questions!
+- Publicize!
