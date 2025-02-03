@@ -8,4 +8,4 @@ On behalf of the Narwhal Amateur Radio Society's Slack crew,
 
 ## TODO
 
-- [ ] PDF generation (for certificates) using [jsPDF](https://github.com/parallax/jsPDF)
+- [ ] Embed the build date / git ref into the built site so it can be included on certs

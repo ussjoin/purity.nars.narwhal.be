@@ -1,7 +1,123 @@
 {{ define "main" }}
 {{ partial "back_link.html" .}}
 
-<script type="text/javascript">
+<article>
+
+  <div id="scoreblock">
+    <div id="scoreblock-inner">
+      <h1>Score: <span id="score">0</span></h1>
+    </div>
+  </div>
+
+  <h1>{{ .Title }}</h1>
+
+  {{ $data := dict }}
+  {{ $path := "purityquestions.json" }}
+  {{ with resources.Get $path }}
+    {{ with . | transform.Unmarshal }}
+      {{ $data = . }}
+    {{ end }}
+  {{ else }}
+    {{ errorf "Unable to get global resource %q" $path }}
+  {{ end }}
+  
+  {{ $totalpoints := 0 }}
+
+  <form action="javascript:void(0);">
+    {{ range $data }}
+      <h2>{{ .category }}</h2>
+        <ol>
+          {{ range .questions }}
+            {{ $qpoints := default 1 .points}}
+            {{ $totalpoints = add $totalpoints $qpoints}}
+            <li><input type="checkbox" oninput="calculateScore()" value="{{ $qpoints }}" />{{ .question | markdownify }}</li>
+            {{ if .subquestions }}
+              <ol>
+                {{ range .subquestions }}
+                  {{ $sqpoints := default 1 .points}}
+                  {{ $totalpoints = add $totalpoints $sqpoints}}
+                  <li><input type="checkbox" oninput="calculateScore()" value="{{ $sqpoints }}" />... {{ .question | markdownify }}</li>
+                {{ end }}
+              </ol>
+            {{ end }}
+          {{ end }}
+        </ol>
+      {{ end }}
+      <div id="generate_certificate_inputs">
+        <br />
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" />
+        <br />
+        <label for="callsign">Your Callsign:</label>
+        <input type="text" name="callsign" id="callsign" />
+        <br />
+        <input type="submit" value="Generate Certificate" onclick="generateCertificate()" />
+      </div>
+  </form>
+  <div id="nojs">
+    Hello! It looks like you're not using JavaScript. That's totally great! The entire quiz is statically generated with <a href="https://gohugo.io/">Hugo</a> and our entire page source is available <a href="https://github.com/ussjoin/purity.nars.narwhal.be">on GitHub</a>. Unfortunately, it means we can't calculate your score or generate your certificate, because we do all that client-side for maximum privacy (instead of in a Perl script like in the good old days). If you have an idea for how to improve our NoJS experience, please <a href="mailto:nars@narwhal.be">contact us</a>!
+  </div>
+  <div id="totalpoints" style="visibility:hidden">{{ $totalpoints }}</div>
+</article>
+
+<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="/purity/LeagueSpartan-Light-normal.js" type="module"></script>
+<script>
+  
+  function generateCertificate() {
+    const { jsPDF } = window.jspdf;
+
+    const doc = new jsPDF({
+      orientation: "landscape",
+      unit: "in",
+      format: [11, 8.5]
+    });
+    
+    // const myFont = ... // load the *.ttf font file as binary string
+    //
+    // // add the font to jsPDF
+    // doc.addFileToVFS("LeagueSpartan-Light.ttf", myFont);
+    doc.setFont("LeagueSpartan-Light");
+    doc.setFontSize(40);
+    
+    var image = new Image()
+
+    image.src = '/purity/puritybackground.png'
+
+    doc.addImage(image,'png',0,0,11,8.5, "foo", "MEDIUM");
+    
+    nameElement = document.getElementById("name");
+    callsignElement = document.getElementById("callsign");
+    
+    var theName = nameElement.value || "Forgot to Enter Name";
+    var theCallsign = callsignElement.value || "SWL";
+    
+    doc.text(theName + ", " + theCallsign, 5.5, 3.6, {align: 'center'});
+    
+    const scorebox = document.getElementById('score');
+    const theScore = scorebox.innerText;
+    
+    const totalPointsBox = document.getElementById('totalpoints');
+    const totalPoints = parseInt(totalPointsBox.textContent);
+    console.log(totalpoints);
+    
+    const percentage = Math.round(100*(parseFloat(theScore) / parseFloat(totalPoints)))
+    
+    doc.text(theScore + "/" + totalPoints + " (" + percentage + "%)", 5.5, 5.2, {align: 'center'});
+    
+    const date = new Date();
+    const month = date.toLocaleString('default', { month: 'long' });
+    
+    
+    doc.text(month + " " + date.getDate() + ", " + date.getFullYear(), 5.5, 6.75, {align: 'center'});
+    
+    //doc.text("Hello world!", 1, 1);
+    console.log("Got here");
+    //console.log(doc);
+    //doc.output('pdfobjectnewwindow', {filename:"NARS Purity Certificate.pdf"})
+    doc.save("certificate.pdf");
+  }
+  
   function loadScoring() {
     generatorblock = document.getElementById("generate_certificate_inputs");
     scoreblock = document.getElementById("scoreblock");
@@ -26,60 +142,7 @@
     const scorebox = document.getElementById('score');
     scorebox.innerText = score;
   }
-</script>
-
-<article>
-
-  <div id="scoreblock">
-    <div id="scoreblock-inner">
-      <h1>Score: <span id="score">0</span></h1>
-    </div>
-  </div>
-
-  <h1>{{ .Title }}</h1>
-
-  {{ $data := dict }}
-  {{ $path := "purityquestions.json" }}
-  {{ with resources.Get $path }}
-    {{ with . | transform.Unmarshal }}
-      {{ $data = . }}
-    {{ end }}
-  {{ else }}
-    {{ errorf "Unable to get global resource %q" $path }}
-  {{ end }}
-
-  <form action="none">
-    {{ range $data }}
-      <h2>{{ .category }}</h2>
-        <ol>
-          {{ range .questions }}
-            <li><input type="checkbox" oninput="calculateScore()" value="{{ default 1 .points }}" />{{ .question | markdownify }}</li>
-            {{ if .subquestions }}
-              <ol>
-                {{ range .subquestions }}
-                  <li><input type="checkbox" oninput="calculateScore()" value="{{ default 1 .points }}" />... {{ .question | markdownify }}</li>
-                {{ end }}
-              </ol>
-            {{ end }}
-          {{ end }}
-        </ol>
-      {{ end }}
-      <div id="generate_certificate_inputs">
-        <br />
-        <label for="name">Your Name:</label>
-        <input type="text" name="name" id="name" />
-        <br />
-        <label for="callsign">Your Callsign:</label>
-        <input type="text" name="callsign" id="callsign" />
-        <br />
-        <input type="submit" value="Generate Certificate" />
-      </div>
-  </form>
-  <div id="nojs">
-    Hello! It looks like you're not using JavaScript. That's totally great! The entire quiz is statically generated with <a href="https://gohugo.io/">Hugo</a> and our entire page source is available <a href="https://github.com/ussjoin/purity.nars.narwhal.be">on GitHub</a>. Unfortunately, it means we can't calculate your score or generate your certificate, because we do all that client-side for maximum privacy (instead of in a Perl script like in the good old days). If you have an idea for how to improve our NoJS experience, please <a href="mailto:nars@narwhal.be">contact us</a>!
-  </div>
-</article>
-<script>
+  
   // self executing function here
   (function() {
     loadScoring();
