@@ -89,28 +89,14 @@ h2, h3, h4, h5, h6 { margin-top: 1.5rem; }
 
 p { margin: 1rem 0; }
 
-form {
-  counter-reset: fullitem;
-}
-
-ol > li:before {
-  counter-increment: fullitem;
-  content: counters(fullitem, ".") ". ";
-}
-
-ol > ol {
-  counter-reset: subitem;
-}
-
-
-ol > ol > li:before {
-  counter-increment: subitem;
-  content: counters(fullitem, ".") "." counters(subitem, ".") ". ";
-}
-
 li { 
   margin: 0.4rem 0; 
   list-style-type: none;
+}
+
+.questionid {
+  opacity: 50%;
+  font-size: small;
 }
 
 input[type=checkbox] {

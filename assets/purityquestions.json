@@ -3,16 +3,20 @@
     "category": "On the Air",
     "questions": [
       {
-        "question": "Have you sent an SSTV transmission?"
+        "question": "Have you sent an SSTV transmission?",
+        "id": "OTA-001"
       },
       {
         "question": "Have you made an SSTV QSO?",
+        "id": "OTA-002",
         "subquestions": [
           {
-            "question": "where you received what looks like a 1990s dorm room poster (complete with ample flesh) via SSTV?"
+            "question": "where you received what looks like a 1990s dorm room poster (complete with ample flesh) via SSTV?",
+            "id": "OTA-002-001"
           },
           {
-            "question": "with someone who doesn't understand why they shouldn't be sending 1990s dorm room posters via ham radio?"
+            "question": "with someone who doesn't understand why they shouldn't be sending 1990s dorm room posters via ham radio?",
+            "id": "OTA-002-002"
           }
         ]
       }
@@ -23,77 +27,101 @@
     "questions": [
       {
         "question": "Have you put up an antenna?",
+        "id": "SET-001",
         "subquestions": [
           {
-            "question": "in the rain?"
+            "question": "in the rain?",
+            "id": "SET-001-001"
           },
           {
-            "question": "in a thunderstorm?"
+            "question": "in a thunderstorm?",
+            "id": "SET-001-002"
           },
           {
-            "question": "not _technically_ in a thunderstorm?"
+            "question": "not _technically_ in a thunderstorm?",
+            "id": "SET-001-003"
           },
           {
-            "question": "by throwing a heavy object that you didn't properly attach to the line?"
+            "question": "by throwing a heavy object that you didn't properly attach to the line?",
+            "id": "SET-001-004"
           },
           {
-            "question": "and then had to take it back down again to attach the coax because you forgot before you put it up?"
+            "question": "and then had to take it back down again to attach the coax because you forgot before you put it up?",
+            "id": "SET-001-005"
           },
           {
-            "question": "that fell down and broke itself?"
+            "question": "that fell down and broke itself?",
+            "id": "SET-001-006"
           },
           {
-            "question": "that fell down and broke something else?"
+            "question": "that fell down and broke something else?",
+            "id": "SET-001-007"
           }
         ]
       },
       {
         "question": "Have you attached ham radio gear to something other than a purpose-built ham radio support?",
+        "id": "SET-002",
         "subquestions": [
           {
-            "question": "to a balloon?"
+            "question": "to a balloon?",
+            "id": "SET-002-001"
           },
           {
-            "question": "to a rocket?"
+            "question": "to a rocket?",
+            "id": "SET-002-002"
           },
           {
-            "question": "to a kite?"
+            "question": "to a kite?",
+            "id": "SET-002-003"
           },
           {
-            "question": "to another human?"
+            "question": "to another human?",
+            "id": "SET-002-004"
           },
           {
-            "question": "to a pet?"
+            "question": "to a pet?",
+            "id": "SET-002-005"
           },
           {
-            "question": "to an endangered species (flora or fauna)?"
+            "question": "to an endangered species (flora or fauna)?",
+            "id": "SET-002-006"
           },
           {
-            "question": "in a protected area (state/national park)?"
+            "question": "in a protected area (state/national park)?",
+            "id": "SET-002-007"
           },
           {
-            "question": "to a plane?"
+            "question": "to a plane?",
+            "id": "SET-002-008"
           },
           {
-            "question": "to a boat?"
+            "question": "to a boat?",
+            "id": "SET-002-009"
           },
           {
-            "question": "to a house?"
+            "question": "to a house?",
+            "id": "SET-002-010"
           },
           {
-            "question": "to a car?"
+            "question": "to a car?",
+            "id": "SET-002-011"
           },
           {
-            "question": "to a bike?"
+            "question": "to a bike?",
+            "id": "SET-002-012"
           },
           {
-            "question": "to a place of business you worked for?"
+            "question": "to a place of business you worked for?",
+            "id": "SET-002-013"
           },
           {
-            "question": "to a place of business you did not work for?"
+            "question": "to a place of business you did not work for?",
+            "id": "SET-002-014"
           },
           {
-            "question": "to a place of worship?"
+            "question": "to a place of worship?",
+            "id": "SET-002-015"
           }
         ]
       }
@@ -103,19 +131,24 @@
     "category": "Operating Events",
     "questions": [
       {
-        "question": "Have you ever attempted to do ham radio from inside a granite (or other mountain) bowl?"
+        "question": "Have you ever attempted to do ham radio from inside a granite (or other mountain) bowl?",
+        "id": "OPE-001"
       },
       {
-        "question": "Have you ever torn an antenna in half during an activation?"
+        "question": "Have you ever torn an antenna in half during an activation?",
+        "id": "OPE-002"
       },
       {
         "question": "Have you neglected personal care while DXing for multiple hours?",
+        "id": "OPE-003",
         "subquestions": [
           {
-            "question": "where the number of hours exceeded the number of contacts you made?"
+            "question": "where the number of hours exceeded the number of contacts you made?",
+            "id": "OPE-003-001"
           },
           {
-            "question": "using a voice mode?"
+            "question": "using a voice mode?",
+            "id": "OPE-003-002"
           }
         ]
       }
@@ -125,27 +158,34 @@
     "category": "Other Hams",
     "questions": [
       {
-        "question": "Have you ever discussed a prostate on ham radio?"
+        "question": "Have you ever discussed a prostate on ham radio?",
+        "id": "OHA-001"
       },
       {
         "question": "Have you ever heard a QSO on ham radio that would pass the Bechdel Test?",
+        "id": "OHA-002",
         "subquestions": [
           {
-            "question": "on HF?"
+            "question": "on HF?",
+            "id": "OHA-002-001"
           }
         ]
       },
       {
         "question": "Have you ever used ham radio to discuss dialysis?",
+        "id": "OHA-003",
         "subquestions": [
           {
-            "question": "on 2m?"
+            "question": "on 2m?",
+            "id": "OHA-003-001"
           },
           {
-            "question": "on 10m?"
+            "question": "on 10m?",
+            "id": "OHA-003-002"
           },
           {
-            "question": "on 20m or lower?"
+            "question": "on 20m or lower?",
+            "id": "OHA-003-003"
           }
         ]
       }
@@ -156,49 +196,62 @@
     "questions": [
       {
         "question": "Have you seen a vacuum tube?",
+        "id": "POT-001",
         "subquestions": [
           {
-            "question": "in person?"
+            "question": "in person?",
+            "id": "POT-001-001"
           }
         ]
       },
       {
-        "question": "Have you tuned a vacuum tube transmitter?"
+        "question": "Have you tuned a vacuum tube transmitter?",
+        "id": "POT-002"
       },
       {
-        "question": "Do you own radio gear that weighs more than you do?"
+        "question": "Do you own radio gear that weighs more than you do?",
+        "id": "POT-003"
       },
       {
-        "question": "Have you ever fat-fingered a frequency so badly you ended up in [Part 90](https://en.wikipedia.org/wiki/Business_band)?"
+        "question": "Have you ever fat-fingered a frequency so badly you ended up in [Part 90](https://en.wikipedia.org/wiki/Business_band)?",
+        "id": "POT-004"
       },
       {
         "question": "Have you transported yourself more than 10 miles to buy ham radio gear?",
+        "id": "POT-005",
         "subquestions": [
           {
-            "question": "50 miles?"
+            "question": "50 miles?",
+            "id": "POT-005-001"
           },
           {
-            "question": "100 miles?"
+            "question": "100 miles?",
+            "id": "POT-005-002"
           },
           {
-            "question": "200 miles?"
+            "question": "200 miles?",
+            "id": "POT-005-003"
           }
         ]
       },
       {
         "question": "Have you ever been inspired to add an antenna to your house while working on an unrelated household chore?",
+        "id": "POT-006",
         "subquestions": [
           {
-            "question": "Did you complete the chore first?"
+            "question": "Did you complete the chore first?",
+            "id": "POT-006-001"
           },
           {
-            "question": "Did you ever complete the chore?"
+            "question": "Did you ever complete the chore?",
+            "id": "POT-006-002"
           }
         ]
       },
       {
         "question": "Can you remember the difference between a heterodyne and superheterodyne receiver?",
-        "points": -5
+        "points": -5,
+        "id": "POT-007"
       }
     ]
   }

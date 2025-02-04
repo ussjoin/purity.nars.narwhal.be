@@ -26,24 +26,24 @@
   <form action="javascript:void(0);">
     {{ range $data }}
       <h2>{{ .category }}</h2>
-        <ol>
+        <ul>
           {{ range .questions }}
             {{ $qpoints := default 1 .points}}
             {{ $totalpoints = add $totalpoints $qpoints}}
             <li>
-              <input type="checkbox" oninput="calculateScore()" value="{{ $qpoints }}" >{{ .question | markdownify }}
+              <input type="checkbox" oninput="calculateScore()" value="{{ $qpoints }}" >{{ .question | markdownify }} <span class="questionid">{{ .id }}</span>
               {{ if .subquestions }}
-                <ol>
+                <ul>
                   {{ range .subquestions }}
                     {{ $sqpoints := default 1 .points}}
                     {{ $totalpoints = add $totalpoints $sqpoints}}
-                    <li><input type="checkbox" oninput="calculateScore()" value="{{ $sqpoints }}" >... {{ .question | markdownify }}</li>
+                    <li><input type="checkbox" oninput="calculateScore()" value="{{ $sqpoints }}" >... {{ .question | markdownify }} <span class="questionid">{{ .id }}</span></li>
                   {{ end }}
-                </ol>
+                </ul>
               {{ end }}
             </li>
           {{ end }}
-        </ol>
+        </ul>
       {{ end }}
       <div id="generate_certificate_inputs">
         <br>
@@ -53,10 +53,13 @@
         <label for="callsign">Your Callsign:</label>
         <input type="text" name="callsign" id="callsign">
         <br>
-        <input type="submit" value="Generate Certificate" onclick="generateCertificate()">
+        <br>
+        <a href="javascript:generateCertificate();">[ Generate Certificate ]</a>
       </div>
   </form>
   <div id="nojs">
+    <br>
+    <br>
     Hello! It looks like you're not using JavaScript. That's totally great! The entire quiz is statically generated with <a href="https://gohugo.io/">Hugo</a> and our entire page source is available <a href="https://github.com/ussjoin/purity.nars.narwhal.be">on GitHub</a>. Unfortunately, it means we can't calculate your score or generate your certificate, because we do all that client-side for maximum privacy (instead of in a Perl script like in the good old days). If you have an idea for how to improve our NoJS experience, please <a href="mailto:nars@narwhal.be">contact us</a>!
   </div>
   <div id="totalpoints" style="visibility:hidden">{{ $totalpoints }}</div>
