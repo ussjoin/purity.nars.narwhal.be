@@ -30,28 +30,30 @@
           {{ range .questions }}
             {{ $qpoints := default 1 .points}}
             {{ $totalpoints = add $totalpoints $qpoints}}
-            <li><input type="checkbox" oninput="calculateScore()" value="{{ $qpoints }}" />{{ .question | markdownify }}</li>
-            {{ if .subquestions }}
-              <ol>
-                {{ range .subquestions }}
-                  {{ $sqpoints := default 1 .points}}
-                  {{ $totalpoints = add $totalpoints $sqpoints}}
-                  <li><input type="checkbox" oninput="calculateScore()" value="{{ $sqpoints }}" />... {{ .question | markdownify }}</li>
-                {{ end }}
-              </ol>
-            {{ end }}
+            <li>
+              <input type="checkbox" oninput="calculateScore()" value="{{ $qpoints }}" >{{ .question | markdownify }}
+              {{ if .subquestions }}
+                <ol>
+                  {{ range .subquestions }}
+                    {{ $sqpoints := default 1 .points}}
+                    {{ $totalpoints = add $totalpoints $sqpoints}}
+                    <li><input type="checkbox" oninput="calculateScore()" value="{{ $sqpoints }}" >... {{ .question | markdownify }}</li>
+                  {{ end }}
+                </ol>
+              {{ end }}
+            </li>
           {{ end }}
         </ol>
       {{ end }}
       <div id="generate_certificate_inputs">
-        <br />
+        <br>
         <label for="name">Your Name:</label>
-        <input type="text" name="name" id="name" />
-        <br />
+        <input type="text" name="name" id="name">
+        <br>
         <label for="callsign">Your Callsign:</label>
-        <input type="text" name="callsign" id="callsign" />
-        <br />
-        <input type="submit" value="Generate Certificate" onclick="generateCertificate()" />
+        <input type="text" name="callsign" id="callsign">
+        <br>
+        <input type="submit" value="Generate Certificate" onclick="generateCertificate()">
       </div>
   </form>
   <div id="nojs">
