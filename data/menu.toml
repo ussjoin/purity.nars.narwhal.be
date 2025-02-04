@@ -5,3 +5,6 @@ url = '/purity'
   [[entries.entries]]
   title = "Being an authentic and complete record of all the things one needs to do as a ham radio operator, or 'piece of ham.'"
 
+[[entries]]
+title = "Frequently Asked Questions"
+url = '/faq'
